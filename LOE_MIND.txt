@@ -1,0 +1,25 @@
+PRODIGY — mootori kalkulaator
+
+Käivita Kaivita.bat või py mootor.py.
+Hoia mootor.py, mootorid.py ja arvutus.py samas kaustas.
+Vajalik Python 3 koos Tkinteriga. Lisapakette pole vaja.
+
+Vali rippmenüüst üks 39 üldisest mootoriprofiilist. Nimi näitab kubatuuri,
+silindrite paigutust ja kütuseliiki. R6 tähendab reasmootorit, V6 V-mootorit.
+Ülelaadimisega profiilidel on vastav märge. Profiilid ei esinda kindlaid automudeleid.
+Otsinguvälja pole; kogu valik on keritavas menüüs.
+
+Kolm tahhomeetri stiilis näidikut juhivad kubatuuri, pöördeid ja õhutemperatuuri.
+Muuda väärtust osutit lohistades või näidiku skaalal klõpsates.
+Näidikule saad liikuda Tab-klahviga. Nooleklahvid muudavad väärtust;
+Home ja End valivad vahemiku alumise või ülemise piiri.
+Kütusekogus ja õhunäidud arvutatakse alati automaatselt ning on rohelised.
+Õhuvajadus vastab arvutatud õhuvoolule, sest kütusekogus sobitatakse õhuga.
+
+Nupp „Lähtesta” taastab valitud profiili kubatuuri, pöörded ja temperatuuri.
+Uue profiili valik taastab samuti selle profiili algväärtused.
+Muudetud väärtuste juures kuvatakse „Kohandatud töörežiim”.
+Väiksemas aknas paiknevad tulemused näidikute all; vajadusel keri akent.
+
+Võimsus ja väändemoment on hinnangud, mitte tehase maksimumid.
+Allikad ja eeldused: MOOTORITE_ALLIKAD.md.
