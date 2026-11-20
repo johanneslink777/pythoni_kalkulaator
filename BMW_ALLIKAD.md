@@ -1,6 +1,6 @@
 # Prodigy BMW mootoriprofiilid
 
-Kontrollitud 03.11.2026. Iga profiil esindab alltoodud varianti, mitte kogu mootoriperekonda. Nimivõimsus on taustainfo ega osale õhuvoolu arvutuses.
+Kontrollitud 03.11.2026. Tabel kirjeldab praeguste üldprofiilide aluseks olnud BMW variante. Nimivõimsus on taustainfo ega osale õhuvoolu arvutuses.
 
 | Mootor ja variant | Kubatuur | Võimsus | Allikas |
 |---|---:|---:|---|
@@ -15,11 +15,9 @@ M67-l on ka 180 kW variant; siin on valitud BMW Classicu 175 kW kirjeldus. M42 E
 
 ## Arvutuse eeldused, mitte BMW mõõteandmed
 
-- Diislid: 2500 p/min, 45 °C, 1,5 bar ülerõhk (2,51325 bar absoluutne), õhu-kütuse massisuhe 25.
-- Bensiinimootorid: 3000 p/min, 20 °C, 1,01325 bar absoluutne rõhk, massisuhe 14,7.
-- Kõigi profiilide mahuline kasutegur on näitlikult 85%.
-- Kütusekogused on valitud näidissisendid, mitte mõõdetud kulu ega nimivõimsusele vastav kütusekulu.
-- Kasutaja saab muuta kubatuuri, pöördeid, temperatuuri ja kütusekogust. Ülejäänud eeldused jäävad profiili valiku järgi fikseerituks.
+- Kasutaja saab muuta kubatuuri, pöördeid ja sisselaskeõhu temperatuuri.
+- Mahuline kasutegur ja ülelaaderõhk arvutatakse pöörete järgi näidiskõveralt. Profiilide algväärtused ja töörežiimi kirjeldus on failis [MOOTORITE_ALLIKAD.md](MOOTORITE_ALLIKAD.md).
+- Kalkulaator arvutab kütusekoguse automaatselt õhumassi ja profiili õhu-kütuse massisuhte põhjal. Massisuhe on diislil 25 ja bensiinil 14,7.
 
 Need allikad ei anna töörežiimide kaupa õhuvoolu, kütusekulu ega ülelaaderõhu kaarte. Seetõttu ei ole kalkulaator konkreetse BMW mootori kalibreeritud simulatsioon. Turbo rõhku ei korrutata turbolaadurite arvuga.
 
@@ -28,7 +26,7 @@ Need allikad ei anna töörežiimide kaupa õhuvoolu, kütusekulu ega ülelaader
 
 Võimsus on valitud töörežiimi lihtsustatud energiabilanss, mitte tehase maksimum ega dünostendi tulemus.
 
-- Arvestatav kütus [g/min] = min(sisestatud kütus, õhuvool / profiili õhu-kütuse suhe).
+- Arvestatav kütus [g/min] = õhuvool [g/min] / profiili õhu-kütuse massisuhe.
 - Võimsus [kW] = arvestatav kütus × alumine kütteväärtus [MJ/kg] / 60 × efektiivne kasutegur.
 - Väändemoment [Nm] = võimsus × 60000 / (2π × pöörded [p/min]).
 - Mudeli konstandid: diisel 42,6 MJ/kg ja 32%; bensiin 43,5 MJ/kg ja 24%. Need on illustratiivsed eeldused, mitte BMW mootorite mõõdetud kasutegurid.
