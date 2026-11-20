@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="et">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0c1119">
+  <meta name="description" content="Interaktiivne mootori kalkulaator. Vali mootoriprofiil ning arvuta võimsus ja väändemoment.">
+  <title>PRODIGY · Mootori kalkulaator</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="brand"><span class="mark" aria-hidden="true"></span> PRODIGY</div>
+      <h1>Mootori kalkulaator</h1>
+    </header>
+    <noscript>Kalkulaatori kasutamiseks luba brauseris JavaScript.</noscript>
+    <form id="calculator">
+      <div class="profile">
+        <div class="heading"><label for="profile">Mootoriprofiil</label><span id="profile-count"></span></div>
+        <select id="profile"></select>
+      </div>
+      <div class="dashboard">
+        <section class="panel operating" aria-labelledby="operating">
+          <div class="heading">
+            <div><h2 id="operating">Töörežiim</h2><p id="mode">Profiili algväärtused</p></div>
+            <button type="reset">Lähtesta</button>
+          </div>
+          <div class="gauges">
+            <div class="gauge">
+              <canvas width="200" height="165" aria-hidden="true"></canvas>
+              <label for="volume">Kubatuur</label>
+              <input id="volume" type="range" min="0.5" max="10" step="0.01" value="2">
+            </div>
+            <div class="gauge">
+              <canvas width="200" height="165" aria-hidden="true"></canvas>
+              <label for="rpm">Pöörded</label>
+              <input id="rpm" type="range" min="600" max="7500" step="50" value="3000">
+            </div>
+            <div class="gauge">
+              <canvas width="200" height="165" aria-hidden="true"></canvas>
+              <label for="temperature">Sisselaskeõhk</label>
+              <input id="temperature" type="range" min="-20" max="100" step="1" value="20">
+            </div>
+          </div>
+          <div class="air">
+            <div class="heading"><h2>Õhk ja kütus</h2><span>Automaatne</span></div>
+            <dl>
+              <div><dt>Kütusekogus</dt><dd><span id="fuel">—</span><small>g/min</small></dd></div>
+              <div><dt>Õhuvool</dt><dd><span id="air">—</span><small>kg/min</small></dd></div>
+              <div><dt>Vajalik õhk</dt><dd><span id="airNeeded">—</span><small>kg/min</small></dd></div>
+            </dl>
+          </div>
+        </section>
+        <section class="results" aria-label="Arvutustulemused">
+          <div class="panel result">
+            <h2>Võimsus</h2>
+            <div class="value"><span id="power">—</span> <span class="unit">kW</span></div>
+          </div>
+          <div class="panel result torque">
+            <h2>Väändemoment</h2>
+            <div class="value"><span id="torque">—</span> <span class="unit">Nm</span></div>
+          </div>
+          <p class="note">Arvutuslikud hinnangud valitud pööretel.</p>
+        </section>
+      </div>
+    </form>
+    <footer><a href="https://github.com/johanneslink777/pythoni_kalkulaator/blob/main/MOOTORITE_ALLIKAD.md">Arvutuse eeldused ja allikad</a></footer>
+  </main>
+</body>
+</html>

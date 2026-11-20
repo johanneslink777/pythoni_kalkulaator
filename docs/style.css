@@ -1,0 +1,64 @@
+:root {
+  color-scheme: dark;
+  font-family: system-ui, sans-serif;
+  background: #0c1119;
+  color: #edf3fa;
+  --panel: #141d29;
+  --field: #1e2c3c;
+  --line: #344459;
+  --muted: #a8b7c9;
+  --mint: #5fe0b6;
+  --blue: #97bfff;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { width: min(72rem, 100%); margin: 0 auto; padding: clamp(1rem, 4vw, 3rem); }
+header { margin-bottom: 2rem; }
+.brand { display: flex; align-items: center; gap: .65rem; font-weight: 800; letter-spacing: .25em; }
+.mark { width: 1.55rem; height: 1.45rem; background: var(--mint); clip-path: polygon(0 100%, 33% 0, 100% 0, 78% 55%, 44% 55%, 28% 100%, 15% 100%, 37% 40%, 66% 40%, 76% 18%, 45% 18%, 15% 100%); }
+h1 { margin: .65rem 0 0; font-size: clamp(2rem, 5vw, 3.6rem); letter-spacing: -.055em; line-height: 1.08; }
+h2, .heading label { font-size: 1rem; margin: 0; font-weight: 650; }
+.heading { display: flex; gap: .75rem; align-items: center; justify-content: space-between; }
+.heading p, .heading span, .note, footer { color: var(--muted); font-size: .9rem; }
+.heading p { margin: .25rem 0 0; }
+.heading p[data-custom] { color: var(--mint); }
+.profile { margin-bottom: 1rem; }
+select, button { color: inherit; font: inherit; border: 1px solid var(--line); background-color: var(--field); border-radius: .55rem; }
+select { appearance: none; width: 100%; margin-top: .55rem; padding: .9rem 2.4rem .9rem .9rem; background-image: linear-gradient(45deg, transparent 50%, var(--mint) 50%), linear-gradient(135deg, var(--mint) 50%, transparent 50%); background-position: right 1.3rem center, right 1rem center; background-size: .3rem .3rem; background-repeat: no-repeat; }
+button { padding: .55rem .85rem; cursor: pointer; }
+button:hover { border-color: var(--mint); }
+:focus-visible { outline: 2px solid var(--mint); outline-offset: 4px; }
+.dashboard { display: grid; grid-template-columns: minmax(0, 2fr) minmax(13rem, 1fr); gap: 1rem; }
+.panel { min-width: 0; background: var(--panel); border: 1px solid var(--line); border-radius: .8rem; padding: clamp(.9rem, 2.5vw, 1.5rem); }
+.gauges { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .7rem; margin: 1.1rem 0 1.3rem; }
+.gauge { display: grid; align-content: start; justify-items: center; text-align: center; }
+.gauge canvas { display: block; width: 100%; max-width: 12.5rem; aspect-ratio: 200 / 165; cursor: grab; touch-action: none; }
+.gauge canvas:active { cursor: grabbing; }
+.gauge label { font-size: .9rem; font-weight: 650; }
+.gauge input { width: 90%; min-height: 24px; margin: .3rem 0 0; accent-color: var(--mint); cursor: pointer; }
+.air { border-top: 1px solid var(--line); padding-top: 1rem; }
+dl { margin: .4rem 0 0; }
+dl div { display: flex; align-items: baseline; justify-content: space-between; gap: .5rem; padding: .3rem 0; }
+dt, dd small { color: var(--muted); }
+dd { margin: 0; color: var(--mint); font-weight: 650; font-variant-numeric: tabular-nums; white-space: nowrap; }
+dd small { display: inline-block; min-width: 3.4rem; text-align: right; font-weight: 400; }
+.results { display: grid; gap: .75rem; grid-template-rows: 1fr 1fr auto; }
+.result { display: flex; flex-direction: column; justify-content: center; }
+.value { color: var(--mint); font-size: clamp(1.75rem, 5vw, 3.5rem); line-height: 1.08; font-weight: 750; font-variant-numeric: tabular-nums; margin-top: .5rem; }
+.value .unit { font-size: 1rem; font-weight: 600; }
+.torque .value { color: var(--blue); }
+.note { margin: 0; }
+footer { margin-top: 1.3rem; }
+a { color: var(--blue); text-underline-offset: .2em; }
+@media (max-width: 52rem) {
+  .dashboard { grid-template-columns: minmax(0, 1fr); }
+  .results { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: auto; }
+  .note { grid-column: 1 / -1; }
+}
+@media (max-width: 34rem) {
+  .gauges { grid-template-columns: 1fr; gap: .85rem; }
+  .gauge { grid-template-columns: minmax(5.5rem, 8.5rem) minmax(0, 1fr); align-items: center; align-content: center; }
+  .gauge canvas { grid-row: span 2; }
+  .gauge label { align-self: end; }
+  .gauge input { align-self: start; }
+}
