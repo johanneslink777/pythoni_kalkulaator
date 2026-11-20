@@ -1,8 +1,13 @@
 PRODIGY — mootori kalkulaator
 
-Käivita Kaivita.bat või py mootor.py.
-Hoia mootor.py, mootorid.py ja arvutus.py samas kaustas.
 Vajalik Python 3 koos Tkinteriga. Lisapakette pole vaja.
+Hoia mootor.py, mootorid.py ja arvutus.py samas kaustas.
+
+Windows: ava Kaivita.bat või käivita käsureal py mootor.py.
+macOS: paigalda Python 3 saidilt https://www.python.org/downloads/macos/
+ja ava Finderis Kaivita.command. Terminalis saad projekti kaustast käivitada
+ka käsu python3 mootor.py. Tkinteri kontrollimiseks käivita python3 -m tkinter.
+Linux: käivita projekti kaustas python3 mootor.py.
 
 Vali rippmenüüst üks 39 üldisest mootoriprofiilist. Nimi näitab kubatuuri,
 silindrite paigutust ja kütuseliiki. R6 tähendab reasmootorit, V6 V-mootorit.
