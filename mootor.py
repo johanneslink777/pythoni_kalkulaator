@@ -253,6 +253,7 @@ class App(tk.Tk):
         super().__init__()
         self.title('Prodigy | Mootori kalkulaator')
         self.configure(bg=BG)
+        self.window_system = self.tk.call('tk', 'windowingsystem')
         self.minsize(700, 560)
         width, height = min(1080, self.winfo_screenwidth()-80), min(850, self.winfo_screenheight()-100)
         self.geometry(f'{width}x{height}')
@@ -276,8 +277,10 @@ class App(tk.Tk):
         self.content_window = self.canvas.create_window(0, 0, window=self.content, anchor='nw')
         self.canvas.bind('<Configure>', self.resize)
         self.content.bind('<Configure>', lambda e: self.refresh_scroll())
-        for event in ('<MouseWheel>', '<Button-4>', '<Button-5>'):
-            self.bind(event, self.wheel, add='+')
+        self.bind('<MouseWheel>', self.wheel, add='+')
+        if self.window_system == 'x11':
+            self.bind('<Button-4>', self.wheel, add='+')
+            self.bind('<Button-5>', self.wheel, add='+')
         self.bind('<Configure>', self.root_configured, add='+')
 
         header = tk.Frame(self.content, bg=BG)
@@ -420,9 +423,12 @@ class App(tk.Tk):
             units = -1
         elif event.num == 5:
             units = 1
+        elif self.window_system == 'aqua':
+            units = -event.delta
         else:
             units = -int(event.delta / 120)
-        self.canvas.yview_scroll(units, 'units')
+        if units:
+            self.canvas.yview_scroll(units, 'units')
 
     def preset(self):
         self.choice.close(restore_focus=False)
