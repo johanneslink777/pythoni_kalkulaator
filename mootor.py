@@ -276,7 +276,8 @@ class App(tk.Tk):
         self.content_window = self.canvas.create_window(0, 0, window=self.content, anchor='nw')
         self.canvas.bind('<Configure>', self.resize)
         self.content.bind('<Configure>', lambda e: self.refresh_scroll())
-        self.bind('<MouseWheel>', self.wheel, add='+')
+        for event in ('<MouseWheel>', '<Button-4>', '<Button-5>'):
+            self.bind(event, self.wheel, add='+')
         self.bind('<Configure>', self.root_configured, add='+')
 
         header = tk.Frame(self.content, bg=BG)
@@ -412,11 +413,16 @@ class App(tk.Tk):
                 self.scrollbar.pack_forget()
                 self.canvas.yview_moveto(0)
 
-    def wheel(self,event):
-        if self.choice.popup is not None:
+    def wheel(self, event):
+        if self.choice.popup is not None or not self.scroll_visible:
             return
-        if self.scroll_visible:
-            self.canvas.yview_scroll(-int(event.delta/120),'units')
+        if event.num == 4:
+            units = -1
+        elif event.num == 5:
+            units = 1
+        else:
+            units = -int(event.delta / 120)
+        self.canvas.yview_scroll(units, 'units')
 
     def preset(self):
         self.choice.close(restore_focus=False)

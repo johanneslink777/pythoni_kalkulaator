@@ -53,11 +53,10 @@ F: https://www.ford.co.uk/experience-ford/news/component-sales
 GM: https://media.gm.com/content/dam/Media/images/US/Events/AutoShows/2013/SEMA/PerfParts/PerfPartsCatalog/ChevroletPerfPartsCatalog.pdf
 
 ## Näidiseeldused
-Diisel: 2500 p/min, bensiin: 3000 p/min. Ülelaadimisega: 45 °C, vabalthingav: 20 °C. Ülerõhk diislil 1,5 bar, bensiinil 0,8 bar; need pole kinnitatud tehaseväärtused. Täitumine 85%, massisuhe diislil 25 ja bensiinil 14,7.
-Kütus g/min = maht L × 275 diislil, × 180 ülelaadimisega bensiinil või × 105 vabalthingaval bensiinil. Ümardatud näidissisendid, mitte tehasekulu.
+Diisel: 2500 p/min, bensiin: 3000 p/min. Ülelaadimisega: 45 °C, vabalthingav: 20 °C. Ülelaadimise näidiskõvera suurim ülerõhk on diislil 1,5 bar ja bensiinil 0,8 bar. Vabalthingavad profiilid kasutavad absoluutrõhku 1,01325 bar. Õhu-kütuse massisuhe on diislil 25 ja bensiinil 14,7.
 Võimsuse ja väändemomendi energiabilansi valemid ning piirangud on failis BMW_ALLIKAD.md. Kasutajaliideses automarke ega automudeleid ei kuvata.
 
 ## Pööretest sõltuv töörežiim
-Kütus arvutatakse alati automaatselt. Kütusekogus [g/min] = praegune arvutatud õhumass [g/min] / profiili õhu-kütuse massisuhe. Varasemat näidiskütusekogust enam arvutuseks ei kasutata. Vajalik õhk vastab seega arvutatud õhuvoolule. See on mudeli tasakaal, mitte tegeliku mootori õhuvoolu mõõtmine. Temperatuuri ja kubatuuri muudatused mõjutavad samuti automaatset kütust.
+Kütus arvutatakse alati automaatselt. Kütusekogus [g/min] = praegune arvutatud õhumass [g/min] / profiili õhu-kütuse massisuhe. Vajalik õhk vastab seega arvutatud õhuvoolule. See on mudeli tasakaal, mitte tegeliku mootori õhuvoolu mõõtmine. Temperatuuri ja kubatuuri muudatused mõjutavad samuti automaatset kütust.
 Täitumine ja ülelaadimine muutuvad pideva tükiti lineaarse näidiskõvera järgi (tooreziim funktsioon). Need pole tootjate mõõtekaardid. Madalatel pööretel on ülelaadimine väiksem, keskel suureneb ning kõrgetel pööretel täitumine langeb.
 Mudeli lubatud vahemik on diislil 600–5000 ja bensiinil 600–7500 p/min, mitte iga mootori tegelik pöördepiir. Temperatuur jääb käsitsi määratavaks. Kütuse käsitsi muutmine ei ole kasutajaliideses võimalik.
